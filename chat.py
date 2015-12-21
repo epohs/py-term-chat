@@ -1,4 +1,4 @@
-# A simple network chat program between to Raspberry Pi's
+# A simple network chat program between two IPs
 
 import network
 import sys
