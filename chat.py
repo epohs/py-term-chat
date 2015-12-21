@@ -17,6 +17,13 @@ def heard(phrase):
   else:
   	print "them: " + phrase
 
+
+
+if ( os.path.isfile("chat.conf") ):
+  config = {}
+  execfile("chat.conf", config)
+
+
 cls()
 
 print "Chat Program"
