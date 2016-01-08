@@ -161,4 +161,19 @@ def _receive(handle):
     raise "lost connection"
   return data
 
+
+def testClient(addr, port):
+  r = False
+  s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+  try:
+    s.settimeout(1.5)
+    s.connect((addr, port))
+    r = True
+  except Exception, e:
+    pass
+
+  s.close()
+  return r
+
 # END

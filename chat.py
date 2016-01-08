@@ -28,10 +28,15 @@ cls()
 
 print "Chat Program"
 
+##
+# Decide whether we're calling or we're waiting
 if (len(sys.argv) >= 2):
   network.call(sys.argv[1], whenHearCall=heard)
-else:  
-  network.wait(whenHearCall=heard)
+else:
+  if ( network.testClient('192.168.1.101', 8888) ):
+    network.wait(whenHearCall=heard)
+  else:
+    network.call(config['default_client'], whenHearCall=heard)
 
 
 
